@@ -3,9 +3,9 @@ package com.company;
 public abstract class Animal {
 
 
-    private String name;
-    private String gender;
-    private int price;
+    public String name;
+    public String gender;
+    public int price;
     protected int healthPercent;
 
 

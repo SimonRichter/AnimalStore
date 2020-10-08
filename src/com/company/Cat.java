@@ -2,7 +2,7 @@ package com.company;
 
 public class Cat extends Animal{
 
-    private int initialPrice = 5000;
+    private int initialPrice = 2000;
 
     public Cat(String name){
         super(name);
