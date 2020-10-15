@@ -15,8 +15,13 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\n".repeat(60));
         System.out.println("Welcome to this game");
-        System.out.println("How many players are you?");
+        System.out.println("How many players are you? (1-4)");
         var numberOfPlayers = Integer.parseInt(scanner.nextLine());
+        while (numberOfPlayers < 1 || numberOfPlayers > 4) {
+            System.out.println("");
+            System.out.println("Try again. Acceptable number of players are 1-4.");
+            numberOfPlayers = Integer.parseInt(scanner.nextLine());
+        }
         System.out.println("");
         for (var i = 1; i <= numberOfPlayers; i++){
             System.out.println("Player " + i + ", what is your name?");
@@ -37,7 +42,8 @@ public class Game {
         }
         System.out.println("How many rounds would you like to play? (5-30 rounds acceptable)");
         numberOfRounds = Integer.parseInt(scanner.nextLine());
-        if (numberOfRounds < 5 || numberOfRounds > 30) {
+        while (numberOfRounds < 5 || numberOfRounds > 30) {
+            System.out.println("");
             System.out.println("Try again. Acceptable number of rounds are between 5 and 30.");
             numberOfRounds = Integer.parseInt(scanner.nextLine());
         }
@@ -113,7 +119,7 @@ public class Game {
         var currentLeaderMoney = -999999999;
         for (var player : players){
             for (var animal : player.animals){
-                player.money += animal.price * animal.healthPercent;
+                player.money += animal.price * (animal.healthPercent * 0.01);
             }
             player.animals.clear();
             System.out.println(player.name + " has finally ended up with " + player.money + " coins.");

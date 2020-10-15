@@ -18,10 +18,6 @@ public abstract class Animal {
 
     public void healthDecrease (Animal animal){
         animal.healthPercent = (int)Math.round(animal.healthPercent - Math.random()*30);
-        System.out.println("Your " + animal.gender.toLowerCase() + " " + animal.type + " named " + animal.name + " has " + animal.healthPercent + "/100 health left.");
- }
-
-
-
-
+        System.out.println("Your " + animal.gender + " " + animal.type.toLowerCase() + " named " + animal.name + " has " + animal.healthPercent + "/100 health left.");
+     }
 }
