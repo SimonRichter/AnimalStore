@@ -228,12 +228,9 @@ public class Store {
         System.out.println("");
         System.out.println("Would you like to sell another animal? (yes/no)");
         Scanner newScanner = new Scanner(System.in);
-        var answer = newScanner.nextLine();
+        var answer = newScanner.nextLine().toLowerCase();
         if (answer.equals("yes")){
             buyAnimal(player);
-        }
-        else {
-            return;
         }
     }
 }

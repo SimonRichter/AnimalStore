@@ -124,12 +124,10 @@ public class Player {
         System.out.println("");
         System.out.println("Would you like to feed another type of animal? (yes/no)");
         Scanner menuScanner = new Scanner(System.in);
-        var yesOrNo = menuScanner.nextLine();
+        var yesOrNo = menuScanner.nextLine().toLowerCase();
         if (yesOrNo.equals("yes")){
             player.feedYourAnimals(player);
         }
-        else {
-            return; }
     }
 
     public void matingTime(Player player){

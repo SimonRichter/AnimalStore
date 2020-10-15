@@ -9,7 +9,4 @@ public class Dog extends Animal {
         price = 6000;
         type = "Dog";
     }
-    public void bark(){
-        System.out.println("Woof!");
-    }
 }

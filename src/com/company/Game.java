@@ -133,7 +133,7 @@ public class Game {
         System.out.println("");
         System.out.println("Would you like to play again? (yes/no)");
         Scanner scan = new Scanner(System.in);
-        var answer = scan.nextLine();
+        var answer = scan.nextLine().toLowerCase();
         if (answer.equals("yes")){
             players.clear();
             createNewGame();
