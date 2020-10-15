@@ -7,18 +7,18 @@ public abstract class Animal {
     public String gender;
     public String type;
     public int price;
-    public double healthPercent;
+    public int healthPercent;
 
 
     public Animal(String name, String gender){
         this.name = name;
         this.gender = gender;
-        this.healthPercent = 1;
+        this.healthPercent = 100;
     }
 
     public void healthDecrease (Animal animal){
-        animal.healthPercent = animal.healthPercent - Math.random()*0.3;
-        System.out.println("Your " + animal.gender + " " + animal.type + " named " + animal.name + " has " + animal.healthPercent + "/1 health left.");
+        animal.healthPercent = (int)Math.round(animal.healthPercent - Math.random()*30);
+        System.out.println("Your " + animal.gender.toLowerCase() + " " + animal.type + " named " + animal.name + " has " + animal.healthPercent + "/100 health left.");
  }
 
 
