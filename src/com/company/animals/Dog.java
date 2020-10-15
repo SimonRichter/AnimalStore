@@ -1,5 +1,4 @@
 package com.company.animals;
-
 import com.company.Animal;
 
 public class Dog extends Animal {

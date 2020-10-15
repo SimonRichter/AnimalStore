@@ -1,9 +1,6 @@
 package com.company;
-
 import com.company.animals.*;
-
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Player {
     public int money;

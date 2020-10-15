@@ -6,7 +6,6 @@ import java.util.*;
 public class Store {
 
     public Store(){
-
     }
 
     public void sellAnimals(Player player){

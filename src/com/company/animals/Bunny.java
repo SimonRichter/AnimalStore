@@ -1,5 +1,4 @@
 package com.company.animals;
-
 import com.company.*;
 
 public class Bunny extends Animal {

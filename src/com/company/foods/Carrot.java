@@ -1,5 +1,4 @@
 package com.company.foods;
-
 import com.company.Food;
 
 public class Carrot extends Food {

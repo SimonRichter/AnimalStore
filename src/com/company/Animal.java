@@ -2,13 +2,11 @@ package com.company;
 
 public abstract class Animal {
 
-
     public String name;
     public String gender;
     public String type;
     public int price;
     public int healthPercent;
-
 
     public Animal(String name, String gender){
         this.name = name;
