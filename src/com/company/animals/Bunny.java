@@ -7,5 +7,6 @@ public class Bunny extends Animal {
         super(name, gender);
         price = 600;
         type = "Bunny";
+        favouriteFood = "Carrot";
     }
 }

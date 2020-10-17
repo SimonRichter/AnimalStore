@@ -17,18 +17,40 @@ public class Player {
 
     public void feedYourAnimals(Player player){
         System.out.println("");
+        System.out.println("Which food would you like to give?");
+        System.out.println("1. Fishfood");
+        System.out.println("2. Carrots");
+        System.out.println("3. Catfood");
+        System.out.println("4. Dogfood");
+        Scanner scan = new Scanner(System.in);
+        var menuItem2 = scan.nextInt();
+        var chosenFood = "";
+        switch (menuItem2){
+            case 1:
+                chosenFood = "Fishfood";
+                break;
+            case 2:
+                chosenFood = "Carrot";
+                break;
+            case 3:
+                chosenFood = "Catfood";
+                break;
+            case 4:
+                chosenFood = "Dogfood";
+                break;
+        }
+        System.out.println("");
         System.out.println("Which type of animal would you like to feed?");
         System.out.println("1. my fish");
         System.out.println("2. my turtle(s)");
         System.out.println("3. my bunny(/bunnies)");
         System.out.println("4. my cat(s)");
         System.out.println("5. my dog(s)");
-        Scanner scan = new Scanner(System.in);
         var menuItem = scan.nextInt();
-        System.out.println("");
-        switch (menuItem){
-            case 1:
-                var numberOfFedFish = 0;
+        if (chosenFood.equals(player.animals.get(menuItem - 1).favouriteFood)) {
+            switch (menuItem) {
+                case 1:
+                    var numberOfFedFish = 0;
                     for (var j = 0; j < player.animals.size(); j++) {
                         if (player.animals.get(j).type.equals("Fish") && player.animals.get(j).healthPercent < 100
                                 && player.foodNumbers.get(0) >= 0.01) {
@@ -42,81 +64,86 @@ public class Player {
                             numberOfFedFish++;
                         }
                     }
-                System.out.println("");
-                System.out.println(numberOfFedFish + " of your " + player.animalNumbers.get(0) + " fish were fully fed.");
+                    System.out.println("");
+                    System.out.println(numberOfFedFish + " of your " + player.animalNumbers.get(0) + " fish were fully fed.");
                     break;
-            case 2:
-                var numberOfFedTurtles = 0;
-                for (var j = 0; j < player.animals.size(); j++) {
-                    if (player.animals.get(j).type.equals("Turtle") && player.animals.get(j).healthPercent < 100
-                            && player.foodNumbers.get(1) >= 0.1) {
-                        while (player.animals.get(j).healthPercent < 100 && player.foodNumbers.get(1) >= 0.1) {
-                            player.animals.get(j).healthPercent += 10;
-                            if (player.animals.get(j).healthPercent > 100) {
-                                player.animals.get(j).healthPercent = 100;
+                case 2:
+                    var numberOfFedTurtles = 0;
+                    for (var j = 0; j < player.animals.size(); j++) {
+                        if (player.animals.get(j).type.equals("Turtle") && player.animals.get(j).healthPercent < 100
+                                && player.foodNumbers.get(1) >= 0.1) {
+                            while (player.animals.get(j).healthPercent < 100 && player.foodNumbers.get(1) >= 0.1) {
+                                player.animals.get(j).healthPercent += 10;
+                                if (player.animals.get(j).healthPercent > 100) {
+                                    player.animals.get(j).healthPercent = 100;
+                                }
+                                player.foodNumbers.set(1, (player.foodNumbers.get(1) - 0.1));
                             }
-                            player.foodNumbers.set(1, (player.foodNumbers.get(1) - 0.1));
+                            numberOfFedTurtles++;
                         }
-                        numberOfFedTurtles++;
                     }
-                }
-                System.out.println("");
-                System.out.println(numberOfFedTurtles + " of your " + player.animalNumbers.get(1) + " turtle(s) were fully fed.");
-                break;
-            case 3:
-                var numberOfFedBunnies = 0;
-                for (var j = 0; j < player.animals.size(); j++) {
-                    if (player.animals.get(j).type.equals("Bunny") && player.animals.get(j).healthPercent < 100
-                            && player.foodNumbers.get(1) >= 0.2) {
-                        while (player.animals.get(j).healthPercent < 100 && player.foodNumbers.get(1) > 0.2) {
-                            player.animals.get(j).healthPercent += 10;
-                            if (player.animals.get(j).healthPercent > 100) {
-                                player.animals.get(j).healthPercent = 100;
+                    System.out.println("");
+                    System.out.println(numberOfFedTurtles + " of your " + player.animalNumbers.get(1) + " turtle(s) were fully fed.");
+                    break;
+                case 3:
+                    var numberOfFedBunnies = 0;
+                    for (var j = 0; j < player.animals.size(); j++) {
+                        if (player.animals.get(j).type.equals("Bunny") && player.animals.get(j).healthPercent < 100
+                                && player.foodNumbers.get(1) >= 0.2) {
+                            while (player.animals.get(j).healthPercent < 100 && player.foodNumbers.get(1) > 0.2) {
+                                player.animals.get(j).healthPercent += 10;
+                                if (player.animals.get(j).healthPercent > 100) {
+                                    player.animals.get(j).healthPercent = 100;
+                                }
+                                player.foodNumbers.set(1, (player.foodNumbers.get(1) - 0.2));
                             }
-                            player.foodNumbers.set(1, (player.foodNumbers.get(1) - 0.2));
+                            numberOfFedBunnies++;
                         }
-                        numberOfFedBunnies++;
                     }
-                }
-                System.out.println("");
-                System.out.println(numberOfFedBunnies + " of your " + player.animalNumbers.get(2) + " bunny(/bunnies) were fully fed.");
-                break;
-            case 4:
-                var numberOfFedCats = 0;
-                for (var j = 0; j < player.animals.size(); j++) {
-                    if (player.animals.get(j).type.equals("Cat") && player.animals.get(j).healthPercent < 100
-                            && player.foodNumbers.get(2) >= 0.1) {
-                        while (player.animals.get(j).healthPercent < 100 && player.foodNumbers.get(2) >= 0.1) {
-                            player.animals.get(j).healthPercent += 10;
-                            if (player.animals.get(j).healthPercent > 100) {
-                                player.animals.get(j).healthPercent = 100;
+                    System.out.println("");
+                    System.out.println(numberOfFedBunnies + " of your " + player.animalNumbers.get(2) + " bunny(/bunnies) were fully fed.");
+                    break;
+                case 4:
+                    var numberOfFedCats = 0;
+                    for (var j = 0; j < player.animals.size(); j++) {
+                        if (player.animals.get(j).type.equals("Cat") && player.animals.get(j).healthPercent < 100
+                                && player.foodNumbers.get(2) >= 0.1) {
+                            while (player.animals.get(j).healthPercent < 100 && player.foodNumbers.get(2) >= 0.1) {
+                                player.animals.get(j).healthPercent += 10;
+                                if (player.animals.get(j).healthPercent > 100) {
+                                    player.animals.get(j).healthPercent = 100;
+                                }
+                                player.foodNumbers.set(2, (player.foodNumbers.get(2) - 0.1));
                             }
-                            player.foodNumbers.set(2, (player.foodNumbers.get(2) - 0.1));
+                            numberOfFedCats++;
                         }
-                        numberOfFedCats++;
                     }
-                }
-                System.out.println("");
-                System.out.println(numberOfFedCats + " of your " + player.animalNumbers.get(3) + " cat(s) were fully fed.");
-                break;
-            case 5:
-                var numberOfFedDogs = 0;
-                for (var j = 0; j < player.animals.size(); j++) {
-                    if (player.animals.get(j).type.equals("Dog") && player.animals.get(j).healthPercent < 100
-                            && player.foodNumbers.get(3) >= 0.3) {
-                        while (player.animals.get(j).healthPercent < 100 && player.foodNumbers.get(3) >= 0.3) {
-                            player.animals.get(j).healthPercent += 10;
-                            if (player.animals.get(j).healthPercent > 100) {
-                                player.animals.get(j).healthPercent = 100;
+                    System.out.println("");
+                    System.out.println(numberOfFedCats + " of your " + player.animalNumbers.get(3) + " cat(s) were fully fed.");
+                    break;
+                case 5:
+                    var numberOfFedDogs = 0;
+                    for (var j = 0; j < player.animals.size(); j++) {
+                        if (player.animals.get(j).type.equals("Dog") && player.animals.get(j).healthPercent < 100
+                                && player.foodNumbers.get(3) >= 0.3) {
+                            while (player.animals.get(j).healthPercent < 100 && player.foodNumbers.get(3) >= 0.3) {
+                                player.animals.get(j).healthPercent += 10;
+                                if (player.animals.get(j).healthPercent > 100) {
+                                    player.animals.get(j).healthPercent = 100;
+                                }
+                                player.foodNumbers.set(3, (player.foodNumbers.get(3) - 0.3));
                             }
-                            player.foodNumbers.set(3, (player.foodNumbers.get(3) - 0.3));
+                            numberOfFedDogs++;
                         }
-                        numberOfFedDogs++;
                     }
-                }
-                System.out.println("");
-                System.out.println(numberOfFedDogs + " of your " + player.animalNumbers.get(4) + " dog(s) were fully fed.");
-                break;
+                    System.out.println("");
+                    System.out.println(numberOfFedDogs + " of your " + player.animalNumbers.get(4) + " dog(s) were fully fed.");
+                    break;
+            }
+        }
+        else {
+            System.out.println("");
+            System.out.println("Your animal did not like that food.");
         }
         System.out.println("");
         System.out.println("Would you like to feed another type of animal? (yes/no)");

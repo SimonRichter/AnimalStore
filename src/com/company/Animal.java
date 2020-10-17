@@ -5,6 +5,7 @@ public abstract class Animal {
     public String name;
     public String gender;
     public String type;
+    public String favouriteFood;
     public int price;
     public int healthPercent;
 

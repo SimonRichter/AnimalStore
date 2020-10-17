@@ -5,5 +5,6 @@ public class Carrot extends Food {
     public Carrot(){
         super();
         price = 10;
+        type = "Carrot";
     }
 }

@@ -5,5 +5,6 @@ public class Fishfood extends Food {
     public Fishfood(){
         super();
         price = 50;
+        type = "Fishfood";
     }
 }
