@@ -47,11 +47,15 @@ public class Player {
         System.out.println("4. my cat(s)");
         System.out.println("5. my dog(s)");
         var menuItem = scan.nextInt();
-        if (chosenFood.equals(player.animals.get(menuItem - 1).favouriteFood)) {
+        boolean correctFood = false;
+        try {
             switch (menuItem) {
                 case 1:
                     var numberOfFedFish = 0;
                     for (var j = 0; j < player.animals.size(); j++) {
+                        if (chosenFood.equals(player.animals.get(j).favouriteFood)) {
+                            correctFood = true;
+                        }
                         if (player.animals.get(j).type.equals("Fish") && player.animals.get(j).healthPercent < 100
                                 && player.foodNumbers.get(0) >= 0.01) {
                             while (player.animals.get(j).healthPercent < 100 && player.foodNumbers.get(0) >= 0.01) {
@@ -64,12 +68,26 @@ public class Player {
                             numberOfFedFish++;
                         }
                     }
+                    if (!correctFood) {
+                        System.out.println("");
+                        System.out.println("Your animal(s) did not like that food. Would you like to try with another kind?");
+                        Scanner finalScan = new Scanner(System.in);
+                        var option = finalScan.nextLine().toLowerCase();
+                        if (option.equals("yes")) {
+                            System.out.println("");
+                            player.feedYourAnimals(player);
+                        }
+                        return;
+                    }
                     System.out.println("");
                     System.out.println(numberOfFedFish + " of your " + player.animalNumbers.get(0) + " fish were fully fed.");
                     break;
                 case 2:
                     var numberOfFedTurtles = 0;
                     for (var j = 0; j < player.animals.size(); j++) {
+                        if (chosenFood.equals(player.animals.get(j).favouriteFood)) {
+                            correctFood = true;
+                        }
                         if (player.animals.get(j).type.equals("Turtle") && player.animals.get(j).healthPercent < 100
                                 && player.foodNumbers.get(1) >= 0.1) {
                             while (player.animals.get(j).healthPercent < 100 && player.foodNumbers.get(1) >= 0.1) {
@@ -82,12 +100,26 @@ public class Player {
                             numberOfFedTurtles++;
                         }
                     }
+                    if (!correctFood) {
+                        System.out.println("");
+                        System.out.println("Your animal(s) did not like that food. Would you like to try with another kind?");
+                        Scanner finalScan = new Scanner(System.in);
+                        var option = finalScan.nextLine().toLowerCase();
+                        if (option.equals("yes")) {
+                            System.out.println("");
+                            player.feedYourAnimals(player);
+                        }
+                        return;
+                    }
                     System.out.println("");
                     System.out.println(numberOfFedTurtles + " of your " + player.animalNumbers.get(1) + " turtle(s) were fully fed.");
                     break;
                 case 3:
                     var numberOfFedBunnies = 0;
                     for (var j = 0; j < player.animals.size(); j++) {
+                        if (chosenFood.equals(player.animals.get(j).favouriteFood)) {
+                            correctFood = true;
+                        }
                         if (player.animals.get(j).type.equals("Bunny") && player.animals.get(j).healthPercent < 100
                                 && player.foodNumbers.get(1) >= 0.2) {
                             while (player.animals.get(j).healthPercent < 100 && player.foodNumbers.get(1) > 0.2) {
@@ -100,12 +132,26 @@ public class Player {
                             numberOfFedBunnies++;
                         }
                     }
+                    if (!correctFood) {
+                        System.out.println("");
+                        System.out.println("Your animal(s) did not like that food. Would you like to try with another kind?");
+                        Scanner finalScan = new Scanner(System.in);
+                        var option = finalScan.nextLine().toLowerCase();
+                        if (option.equals("yes")) {
+                            System.out.println("");
+                            player.feedYourAnimals(player);
+                        }
+                        return;
+                    }
                     System.out.println("");
                     System.out.println(numberOfFedBunnies + " of your " + player.animalNumbers.get(2) + " bunny(/bunnies) were fully fed.");
                     break;
                 case 4:
                     var numberOfFedCats = 0;
                     for (var j = 0; j < player.animals.size(); j++) {
+                        if (chosenFood.equals(player.animals.get(j).favouriteFood)) {
+                            correctFood = true;
+                        }
                         if (player.animals.get(j).type.equals("Cat") && player.animals.get(j).healthPercent < 100
                                 && player.foodNumbers.get(2) >= 0.1) {
                             while (player.animals.get(j).healthPercent < 100 && player.foodNumbers.get(2) >= 0.1) {
@@ -118,12 +164,26 @@ public class Player {
                             numberOfFedCats++;
                         }
                     }
+                    if (!correctFood) {
+                        System.out.println("");
+                        System.out.println("Your animal(s) did not like that food. Would you like to try with another kind?");
+                        Scanner finalScan = new Scanner(System.in);
+                        var option = finalScan.nextLine().toLowerCase();
+                        if (option.equals("yes")) {
+                            System.out.println("");
+                            player.feedYourAnimals(player);
+                        }
+                        return;
+                    }
                     System.out.println("");
                     System.out.println(numberOfFedCats + " of your " + player.animalNumbers.get(3) + " cat(s) were fully fed.");
                     break;
                 case 5:
                     var numberOfFedDogs = 0;
                     for (var j = 0; j < player.animals.size(); j++) {
+                        if (chosenFood.equals(player.animals.get(j).favouriteFood)) {
+                            correctFood = true;
+                        }
                         if (player.animals.get(j).type.equals("Dog") && player.animals.get(j).healthPercent < 100
                                 && player.foodNumbers.get(3) >= 0.3) {
                             while (player.animals.get(j).healthPercent < 100 && player.foodNumbers.get(3) >= 0.3) {
@@ -136,14 +196,26 @@ public class Player {
                             numberOfFedDogs++;
                         }
                     }
+                    if (!correctFood) {
+                        System.out.println("");
+                        System.out.println("Your animal(s) did not like that food. Would you like to try with another kind?");
+                        Scanner finalScan = new Scanner(System.in);
+                        var option = finalScan.nextLine().toLowerCase();
+                        if (option.equals("yes")) {
+                            System.out.println("");
+                            player.feedYourAnimals(player);
+                        }
+                        return;
+                    }
                     System.out.println("");
                     System.out.println(numberOfFedDogs + " of your " + player.animalNumbers.get(4) + " dog(s) were fully fed.");
                     break;
             }
         }
-        else {
+        catch (Exception e){
             System.out.println("");
-            System.out.println("Your animal did not like that food.");
+            System.out.println("Wrong input. Try again.");
+            player.feedYourAnimals(player);
         }
         System.out.println("");
         System.out.println("Would you like to feed another type of animal? (yes/no)");
@@ -257,7 +329,14 @@ public class Player {
         }
         catch (Exception wrongNumber){
             System.out.println("");
-            System.out.println("The mating was unsuccessful.");
+            System.out.println("You picked the wrong number. Would you like to try again? (yes/no)");
+            Scanner finalScan = new Scanner(System.in);
+            var option = finalScan.nextLine().toLowerCase();
+            if (option.equals("yes")) {
+                System.out.println("");
+                player.matingTime(player);
+            }
+            return;
         }
     }
 

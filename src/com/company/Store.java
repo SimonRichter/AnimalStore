@@ -41,7 +41,14 @@ public class Store {
                     }
                 }
                 else {
-                    System.out.println("You didn't bring enough coins.");
+                    System.out.println("You didn't bring enough coins. Would you like to try again?");
+                    Scanner finalScan = new Scanner(System.in);
+                    var option = finalScan.nextLine().toLowerCase();
+                    if (option.equals("yes")) {
+                        System.out.println("");
+                        sellAnimals(player);
+                    }
+                    break;
                 }
                 break;
             case 2:
@@ -62,7 +69,14 @@ public class Store {
                     }
                 }
                 else {
-                    System.out.println("You didn't bring enough coins.");
+                    System.out.println("You didn't bring enough coins. Would you like to try again?");
+                    Scanner finalScan = new Scanner(System.in);
+                    var option = finalScan.nextLine().toLowerCase();
+                    if (option.equals("yes")) {
+                        System.out.println("");
+                        sellAnimals(player);
+                    }
+                    break;
                 }
                 break;
             case 3:
@@ -83,7 +97,14 @@ public class Store {
                     }
                 }
                 else {
-                    System.out.println("You didn't bring enough coins.");
+                    System.out.println("You didn't bring enough coins. Would you like to try again?");
+                    Scanner finalScan = new Scanner(System.in);
+                    var option = finalScan.nextLine().toLowerCase();
+                    if (option.equals("yes")) {
+                        System.out.println("");
+                        sellAnimals(player);
+                    }
+                    break;
                 }
                 break;
             case 4:
@@ -104,7 +125,14 @@ public class Store {
                     }
                 }
                 else {
-                    System.out.println("You didn't bring enough coins.");
+                    System.out.println("You didn't bring enough coins. Would you like to try again?");
+                    Scanner finalScan = new Scanner(System.in);
+                    var option = finalScan.nextLine().toLowerCase();
+                    if (option.equals("yes")) {
+                        System.out.println("");
+                        sellAnimals(player);
+                    }
+                    break;
                 }
                 break;
             case 5:
@@ -125,7 +153,14 @@ public class Store {
                     }
                 }
                 else {
-                    System.out.println("You didn't bring enough coins.");
+                    System.out.println("You didn't bring enough coins. Would you like to try again?");
+                    Scanner finalScan = new Scanner(System.in);
+                    var option = finalScan.nextLine().toLowerCase();
+                    if (option.equals("yes")) {
+                        System.out.println("");
+                        sellAnimals(player);
+                    }
+                    break;
                 }
                 break;
         }
@@ -154,7 +189,15 @@ public class Store {
                     }
                 }
                 else {
-                    System.out.println("You didn't bring enough coins.");
+                    System.out.println("");
+                    System.out.println("You didn't bring enough coins. Would you like to try again? (yes/no)");
+                    Scanner finalScan = new Scanner(System.in);
+                    var option = finalScan.nextLine().toLowerCase();
+                    if (option.equals("yes")) {
+                        System.out.println("");
+                        sellAnimalFoods(player);
+                    }
+                    break;
                 }
                 break;
             case 2:
@@ -168,7 +211,15 @@ public class Store {
                     }
                 }
                 else {
-                    System.out.println("You didn't bring enough coins.");
+                    System.out.println("");
+                    System.out.println("You didn't bring enough coins. Would you like to try again? (yes/no)");
+                    Scanner finalScan = new Scanner(System.in);
+                    var option = finalScan.nextLine().toLowerCase();
+                    if (option.equals("yes")) {
+                        System.out.println("");
+                        sellAnimalFoods(player);
+                    }
+                    break;
                 }
                 break;
             case 3:
@@ -182,7 +233,15 @@ public class Store {
                     }
                 }
                 else {
-                    System.out.println("You didn't bring enough coins.");
+                    System.out.println("");
+                    System.out.println("You didn't bring enough coins. Would you like to try again? (yes/no)");
+                    Scanner finalScan = new Scanner(System.in);
+                    var option = finalScan.nextLine().toLowerCase();
+                    if (option.equals("yes")) {
+                        System.out.println("");
+                        sellAnimalFoods(player);
+                    }
+                    break;
                 }
                 break;
             case 4:
@@ -196,7 +255,15 @@ public class Store {
                     }
                 }
                 else {
-                    System.out.println("You didn't bring enough coins.");
+                    System.out.println("");
+                    System.out.println("You didn't bring enough coins. Would you like to try again? (yes/no)");
+                    Scanner finalScan = new Scanner(System.in);
+                    var option = finalScan.nextLine().toLowerCase();
+                    if (option.equals("yes")) {
+                        System.out.println("");
+                        sellAnimalFoods(player);
+                    }
+                    break;
                 }
                 break;
         }

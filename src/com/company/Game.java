@@ -61,9 +61,10 @@ public class Game {
                 System.out.println("You have the following animals: " + player.animalNumbers.get(0) + " fish, "
                 + player.animalNumbers.get(1) + " turtles, " + player.animalNumbers.get(2) + " bunnies, "
                 + player.animalNumbers.get(3) + " cats and " + player.animalNumbers.get(4) + " dogs.");
-                System.out.println("You have the following foods: " + player.foodNumbers.get(0) + "kg(s) of fishfood, "
-                + player.foodNumbers.get(1) + "kg(s) of carrots, " + player.foodNumbers.get(2) + "kg(s) of catfood and "
-                + player.foodNumbers.get(3) + "kg(s) of dogfood.");
+                System.out.println("You have the following foods: " + (double)Math.round((player.foodNumbers.get(0) * 100))/100
+                        + "kg(s) of fishfood, " + (double)Math.round((player.foodNumbers.get(1) * 100))/100 + "kg(s) of carrots, "
+                        + (double)Math.round((player.foodNumbers.get(2) * 100))/100 + "kg(s) of catfood and "
+                        + (double)Math.round((player.foodNumbers.get(3) * 100))/100 + "kg(s) of dogfood.");
                 player.animalHealth(player);
                 System.out.println("");
                 System.out.println("Choose one of the following options:");
@@ -74,23 +75,28 @@ public class Game {
                 System.out.println("5. Sell animal(s)");
                 Scanner menuScanner = new Scanner(System.in);
                 var menuItem = menuScanner.nextInt();
-
-                switch (menuItem) {
-                    case 1:
-                        store.sellAnimals(player);
-                        break;
-                    case 2:
-                        store.sellAnimalFoods(player);
-                        break;
-                    case 3:
-                        player.feedYourAnimals(player);
-                        break;
-                    case 4:
-                        player.matingTime(player);
-                        break;
-                    case 5:
-                        store.buyAnimal(player);
-                        break;
+                if (menuItem >= 1 && menuItem <= 5) {
+                    switch (menuItem) {
+                        case 1:
+                            store.sellAnimals(player);
+                            break;
+                        case 2:
+                            store.sellAnimalFoods(player);
+                            break;
+                        case 3:
+                            player.feedYourAnimals(player);
+                            break;
+                        case 4:
+                            player.matingTime(player);
+                            break;
+                        case 5:
+                            store.buyAnimal(player);
+                            break;
+                    }
+                }
+                else {
+                    System.out.println("");
+                    System.out.println("Wrong input. Sorry, you lost your action for this round.");
                 }
             }
             checkIfNoMoneyAndNoAnimals();
