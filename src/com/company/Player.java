@@ -2,7 +2,6 @@ package com.company;
 import com.company.animals.*;
 import java.util.*;
 
-
 public class Player {
     public int money;
     public String name;
