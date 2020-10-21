@@ -285,6 +285,23 @@ public class Store {
             System.out.println("A " + player.animals.get(animalNumber - 1).type + " named "
                     + player.animals.get(animalNumber - 1).name + " sold for " + Math.round(player.animals.get(animalNumber - 1).price
                     * (player.animals.get(animalNumber - 1).healthPercent * 0.01)) + ".");
+            switch (player.animals.get(animalNumber -1).type){
+                case "Fish":
+                    player.animalNumbers.set(0, player.animalNumbers.get(0) -1);
+                    break;
+                case "Turtle":
+                    player.animalNumbers.set(1, player.animalNumbers.get(1) -1);
+                    break;
+                case "Bunny":
+                    player.animalNumbers.set(2, player.animalNumbers.get(2) -1);
+                    break;
+                case "Cat":
+                    player.animalNumbers.set(3, player.animalNumbers.get(3) -1);
+                    break;
+                case "Dog":
+                    player.animalNumbers.set(4, player.animalNumbers.get(4) -1);
+                    break;
+            }
             player.animals.remove(animalNumber - 1);
         }
         catch (Exception wrongNumber){

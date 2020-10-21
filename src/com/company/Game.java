@@ -65,6 +65,7 @@ public class Game {
                         + "kg(s) of fishfood, " + (double)Math.round((player.foodNumbers.get(1) * 100))/100 + "kg(s) of carrots, "
                         + (double)Math.round((player.foodNumbers.get(2) * 100))/100 + "kg(s) of catfood and "
                         + (double)Math.round((player.foodNumbers.get(3) * 100))/100 + "kg(s) of dogfood.");
+                System.out.println("");
                 player.animalHealth(player);
                 System.out.println("");
                 System.out.println("Choose one of the following options:");
