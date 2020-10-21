@@ -3,6 +3,7 @@ import com.company.animals.*;
 import com.company.foods.*;
 import java.util.*;
 
+
 public class Store {
 
     public Store(){
